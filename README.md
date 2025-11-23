@@ -100,13 +100,6 @@ An interactive, collapsible view of the codebase. Click file names to explore th
 - **Deployment**: Render.com
 - **Static Files**: WhiteNoise
 
-
-### Movie
-- `name`: Movie title (CharField, max 200 chars)
-- `genre`: Movie genre (CharField, max 200 chars)  
-- `description`: Movie description (TextField)
-- `updated`: Last update timestamp (auto)
-
 ## Views and URLs
 
 - `/` - Homepage with welcome message
