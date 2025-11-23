@@ -84,16 +84,12 @@ An interactive, collapsible view of the codebase. Click file names to explore th
 </details>
 
 ## Features
-
 - Browse all movies in the collection
 - Search movies by genre
 - View detailed movie information
-- Admin interface for movie management
-- Responsive design with modern UI
-- Production-ready deployment configuration
+- Admin interface for movie management(Todo)
 
 ## Tech Stack
-
 - **Backend**: Django 5.2.8
 - **Database**: PostgreSQL (Production) / SQLite (Development)
 - **Styling**: Custom CSS with gradient design
@@ -101,7 +97,6 @@ An interactive, collapsible view of the codebase. Click file names to explore th
 - **Static Files**: WhiteNoise
 
 ## Views and URLs
-
 - `/` - Homepage with welcome message
 - `/movies/` - List all movies
 - `/movie/<id>/` - Movie detail view
