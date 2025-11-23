@@ -2,7 +2,7 @@
 
 ## Project Details
 - Project: Django Movie Collection System
-- Author:  Harry Josephstem
+- Author:  Harry Joseph
 - Created: 2025-11-23
 - Platform: Django Web Application
 - Database: PostgreSQL (Production) / SQLite (Development)
