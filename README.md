@@ -11,8 +11,7 @@
 - Deployment: Render.com
 
 ## Overview
-CineVault is a professional Django web application for managing a movie collection with search functionality. The project demonstrates clean MVC architecture, responsive design.
-## Quick Download
+CineVault is a professional Django web application for managing a movie collection with search functionality. 
 
 **Get the complete project instantly:**
 
