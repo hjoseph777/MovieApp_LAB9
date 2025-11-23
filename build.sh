@@ -18,4 +18,7 @@ echo "from django.contrib.auth.models import User; User.objects.filter(username=
 echo "Populating sample data..."
 python manage.py populate_movies
 
+echo "Running tests to verify build integrity..."
+python manage.py test movie.tests --verbosity=1
+
 echo "Build completed successfully!"
