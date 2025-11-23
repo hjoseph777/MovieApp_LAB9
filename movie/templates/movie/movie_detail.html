@@ -1,0 +1,32 @@
+{% extends 'movie/base.html' %}
+
+{% block title %}{{ movie.name }} - CineVault{% endblock %}
+
+{% block content %}
+<div class="movie-detail">
+    <h1>{{ movie.name }}</h1>
+    
+    <div class="movie-info">
+        <p><strong>Genre:</strong> 
+            <span class="movie-genre" style="margin-left: 10px;">{{ movie.genre }}</span>
+        </p>
+        
+        <p><strong>Description:</strong></p>
+        <p style="font-style: italic; color: #4a5568; font-size: 1.1rem; line-height: 1.7;">
+            {% if movie.description %}
+                "{{ movie.description }}"
+            {% else %}
+                A classic addition to our movie collection.
+            {% endif %}
+        </p>
+        
+        <p><strong>Last Updated:</strong> {{ movie.updated|date:"F d, Y \a\t g:i A" }}</p>
+        
+        <div style="margin-top: 25px; padding: 20px; background: linear-gradient(90deg, #667eea, #764ba2); color: white; border-radius: 10px;">
+            <p style="margin: 0; font-weight: 600;">Movie ID: #{{ movie.id }}</p>
+        </div>
+    </div>
+    
+
+</div>
+{% endblock %}

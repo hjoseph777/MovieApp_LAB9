@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CineVault - Movie Collection{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'movie/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>CineVault</h1>
+            <p class="subtitle">Movie Collection System</p>
+        </header>
+
+        <nav class="nav-bar">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'movie_list' %}">All Movies</a>
+            <a href="{% url 'movie_search' %}">Search</a>
+            <!-- TODO: Admin functionality not fully implemented -->
+            <a href="/admin/">Admin</a>
+        </nav>
+
+        <main class="content-card">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 CineVault - Crafted with ❤️ for Movie Enthusiasts</p>
+        </footer>
+    </div>
+</body>
+</html>

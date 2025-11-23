@@ -1,0 +1,130 @@
+{% extends 'movie/base.html' %}
+
+{% block title %}All Movies - CineVault{% endblock %}
+
+{% block content %}
+<div class="movie-list-section">
+    <h2 style="color: #2d3748; margin-bottom: 25px; font-size: 2rem; text-align: center;">
+        Movie Collection
+    </h2>
+    
+    <p style="text-align: center; color: #718096; margin-bottom: 30px; font-size: 1.1rem;">
+        Click on any movie title to view detailed information
+    </p>
+    
+    {% if movies %}
+        <div class="movie-titles-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+            {% for movie in movies %}
+                <div class="movie-title-card" style="position: relative;">
+                    <a href="{% url 'movie_detail' id=movie.id %}" class="movie-title-link" style="text-decoration: none; color: inherit;">
+                        <div class="movie-title-display">
+                            <h3 style="color: #2d3748; margin-bottom: 8px; font-size: 1.2rem;">{{ movie.name }}</h3>
+                            <div class="movie-genre-badge">{{ movie.genre }}</div>
+                        </div>
+                        
+                        <div class="movie-hover-details">
+                            <h3 style="color: white; margin-bottom: 10px; font-size: 1.2rem;">{{ movie.name }}</h3>
+                            <div style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 15px; display: inline-block; margin-bottom: 12px; font-size: 0.85rem;">
+                                {{ movie.genre }}
+                            </div>
+                            <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.4; margin-bottom: 12px;">
+                                {% if movie.description %}
+                                    {{ movie.description|truncatewords:15 }}
+                                {% else %}
+                                    A classic movie in our premium collection.
+                                {% endif %}
+                            </p>
+                            <small style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">
+                                Updated: {{ movie.updated|date:"M d, Y" }}
+                            </small>
+                            <div style="margin-top: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.8);">
+                                ▶ Click to view details
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div style="text-align: center; margin-top: 35px; padding: 20px; background: #f0f4f8; border-radius: 10px;">
+            <p style="color: #4a5568; margin: 0; font-size: 1.1rem;">
+                Total Movies: <strong>{{ movies|length }}</strong>
+            </p>
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h3>No Movies Found</h3>
+            <p>Our movie collection is being updated. Please check back soon!</p>
+        </div>
+    {% endif %}
+    
+
+</div>
+
+<style>
+.movie-title-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid transparent;
+}
+
+.movie-title-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.movie-title-display {
+    width: 100%;
+}
+
+.movie-genre-badge {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.movie-hover-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.movie-title-card:hover .movie-hover-details {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .movie-titles-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .movie-title-card {
+        height: auto;
+        min-height: 100px;
+    }
+}
+</style>
+{% endblock %}

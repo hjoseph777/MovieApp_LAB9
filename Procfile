@@ -1,0 +1,1 @@
+web: gunicorn movieapp_lab9.wsgi:application
