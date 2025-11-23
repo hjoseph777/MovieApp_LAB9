@@ -19,7 +19,7 @@ CineVault is a professional Django web application for managing a movie collecti
 [![Download CineVault](https://img.shields.io/badge/Download-MOVIEAPP_LAB9.zip-blue?style=for-the-badge&logo=download)](https://github.com/hjoseph777/MovieApp_LAB9/releases/download/v1/MOVIEAPP_LAB9.zip)
 
 ## Live Demo
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://your-app.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://movieapp-lab9.onrender.com/)
 
 *Complete Django project with movie collection demo ready to deploy*
 
