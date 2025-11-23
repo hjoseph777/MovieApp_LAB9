@@ -97,11 +97,11 @@ An interactive, collapsible view of the codebase. Click file names to explore th
 - **Static Files**: WhiteNoise
 
 ## Views and URLs
-- `/` - Homepage with welcome message
-- `/movies/` - List all movies
-- `/movie/<id>/` - Movie detail view
-- `/search/` - Search movies by genre
-- `/admin/` - Django admin interface
+- [`/`](movie/templates/movie/home.html) - Homepage with welcome message ([`home view`](movie/views.py))
+- [`/movies/`](movie/templates/movie/movie_list.html) - List all movies ([`movie_list view`](movie/views.py))
+- [`/movie/<id>/`](movie/templates/movie/movie_detail.html) - Movie detail view ([`movie_detail view`](movie/views.py))
+- [`/search/`](movie/templates/movie/movie_search.html) - Search movies by genre ([`movie_search view`](movie/views.py))
+- [`/admin/`](movie/admin.py) - Django admin interface ([`admin config`](movie/admin.py))
 
 
 *This project demonstrates modern Django web development with production-ready deployment configuration.*
